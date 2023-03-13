@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
@@ -37,14 +38,25 @@ public class MainActivity extends AppCompatActivity {
         {
             public void onSuccess(String res)
             {
-                Token= res;
-                Toast toast = Toast.makeText(getApplicationContext(),
-                        Token, Toast.LENGTH_SHORT);
-                toast.show();
+                if (res != null && !res.isEmpty() && !res.equals("null"))
+                {
+                    Token =res;
+                    Token =Token.replace("\"", "");
 
-                Token =Token.replace("\"", "");
-                Intent myIntent = new Intent(MainActivity.this,ListControlWeight.class);
-                MainActivity.this.startActivity(myIntent);
+                    Intent myIntent = new Intent(MainActivity.this,ListControlWeight.class);
+                    MainActivity.this.startActivity(myIntent);
+                }
+                else
+                {
+                    Toast toast = Toast.makeText(getApplicationContext(),
+                            "Такого пользователя не существует", Toast.LENGTH_SHORT);
+                    toast.show();
+                    Token = "";
+
+                }
+
+
+
             }
         };
         JSONObject object = new JSONObject();

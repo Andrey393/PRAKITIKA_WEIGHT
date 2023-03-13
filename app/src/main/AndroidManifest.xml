@@ -15,6 +15,9 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
+            android:name=".UpdateMeasurementActivity"
+            android:exported="false" />
+        <activity
             android:name=".ListControlWeight"
             android:exported="false" />
         <activity

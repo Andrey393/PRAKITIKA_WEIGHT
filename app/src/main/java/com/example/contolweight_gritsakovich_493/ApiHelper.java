@@ -1,15 +1,13 @@
 package com.example.contolweight_gritsakovich_493;
 
 import android.app.Activity;
-import android.app.DownloadManager;
 import android.widget.Toast;
-
-import org.json.JSONObject;
 
 import java.io.BufferedInputStream;
 import java.io.BufferedOutputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
+
 public class ApiHelper
 {
 

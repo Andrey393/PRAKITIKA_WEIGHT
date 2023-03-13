@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/LinearLayoutMeasurement"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/textViewId"
+            android:layout_width="41dp"
+            android:layout_height="match_parent"
+            android:layout_gravity=""
+            android:layout_weight="0"
+            android:gravity=""
+            android:selectAllOnFocus="false"
+            android:textAlignment="center"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/textViewWeight"
+            android:layout_width="3dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity=""
+            android:selectAllOnFocus="false"
+            android:text="Вес: "
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/textViewData"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity=""
+            android:selectAllOnFocus="false"
+            android:text="Дата:"
+            android:textSize="16sp" />
+    </LinearLayout>
+</LinearLayout>

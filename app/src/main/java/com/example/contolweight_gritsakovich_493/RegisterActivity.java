@@ -32,12 +32,16 @@ public class RegisterActivity extends AppCompatActivity
         {
             public void onSuccess(String res)
             {
-                Toats(1);
+                Toast toast = Toast.makeText(getApplicationContext(),
+                        "Аккаунт был успешно создан", Toast.LENGTH_SHORT);
+                toast.show();
             }
 
             public void onFail(Exception ex)
             {
-                Toats(-1);
+                Toast toast = Toast.makeText(getApplicationContext(),
+                        "Аккаунт уже существует", Toast.LENGTH_SHORT);
+                toast.show();
             }
         };
         JSONObject object = new JSONObject();
@@ -49,23 +53,6 @@ public class RegisterActivity extends AppCompatActivity
         }
 
         apiHelper.send("rpc/register_account",object.toString());
-
-    }
-    void Toats(int i)
-    {
-        if(i == 1)
-        {
-            Toast toast = Toast.makeText(getApplicationContext(),
-                    "Аккаунт был успешно создан", Toast.LENGTH_SHORT);
-            toast.show();
-        }
-        else
-        {
-            Toast toast = Toast.makeText(getApplicationContext(),
-                    "Аккаунт уже существует", Toast.LENGTH_SHORT);
-            toast.show();
-        }
-
 
     }
 }
